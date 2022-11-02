@@ -1,0 +1,60 @@
+﻿@model IEnumerable<musicapp.Models.Userlists>
+@{
+    ViewData["Title"] = "Userlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="top">Userlist</h1>
+
+@*<a style="margin-left:90%" class="btn btn-info" asp-area="" asp-controller="music" asp-action="addsongs">Add Songs</a>*@
+<table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Row number</th>
+            <th scope="col">username</th>
+            <th scope="col">email</th>
+            <th scope="col">password</th>
+            <th scope="col">phone</th>
+            <th scope="col">music_plan</th>
+            <th scope="col">dob</th>
+            <th scope="col">role</th>
+            <th scope="col">Payment Amount</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @{
+        var i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        {
+            i++;
+        }
+        <tbody>
+            <tr>
+                <th scope="row">@i</th>
+                <td>@item.user.Username</td>
+                <td>@item.user.Email</td>
+                <td>@item.user.Password</td>
+                <td>@item.user.Phone</td>
+                <td>@item.user.MusicPlan</td>
+                <td>@item.user.Dob</td>
+                <th>@item.user.Role</th>
+                <th>@item.payment.Paymentamt</th>
+                <th><a asp-action="UserDelete" class="btn btn-danger" aria-disabled="true">Delete</a></th>
+              @*  <th><a asp-action="update" asp-route-username="@item.Username" class="btn btn-success" aria-disabled="true">Update</a></th>*@
+
+
+
+                @*@if (@item.Email == "admin@gmail.com")
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger" aria-disabled="true">Delete</a></th>
+            }
+            else
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger">Delete</a></th>
+            }*@
+            </tr>
+        </tbody>
+    }
+</table>

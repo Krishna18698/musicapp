@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "AdminControls";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="top" >Admin Controls</h1>
+
+
+
+@*<a asp-action="coments" class="btn btn-primary  btn-lg">Feedback</a>
+<a asp-action="Userlist" class="btn btn-primary btn-lg">Userlist</a>*@
+<div class="col">
+<div class="row row-cols-3 row-cols-md-3">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="~/image/songtemp.jpg" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">SongList </h5>
+        <p class="card-text">List of the Songs</p>
+        <a asp-action="SongList" class="btn btn-primary">SongList</a>
+    </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="~/image/Feedtemp.png" style="height:165px" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">User Feedback </h5>
+        <p class="card-text">Feedback of the Users</p>
+        <a asp-action="coments" class="btn btn-primary">User Feedback</a>
+    </div>
+</div>
+<div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/image/usertemp.png" style="height:165px" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">User List </h5>
+        <p class="card-text">List of the Users</p>
+        <a asp-action="UserList" class="btn btn-primary">UserList</a>
+    </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="~/image/genretemp.jpg" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Genre List </h5>
+        <p class="card-text">List of Genre</p>
+        <a asp-action="Genrelist" class="btn btn-primary">GenreList</a>
+    </div>
+</div>
+</div>
+</div>

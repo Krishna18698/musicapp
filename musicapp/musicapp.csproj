@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\image\dev3.jpg" />
+    <Content Remove="wwwroot\MusicF\country-rock-109318.mp3" />
+    <Content Remove="wwwroot\MusicF\om-namashivaya.mp3" />
+    <Content Remove="wwwroot\MusicF\stomping-rock-four-shots.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Action-Rock.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Action-Rock.mp3">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\MusicF\hip-hop-rock-beats-118000.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+</Project>

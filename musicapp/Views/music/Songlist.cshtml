@@ -1,0 +1,57 @@
+﻿@model IEnumerable<musicapp.Models.Music>
+@{
+    ViewData["Title"] = "Songlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="top"  style="color:black;font-family:'Times New Roman'">SONGLIST</h1>
+
+<table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Row number</th>
+            <th scope="col">genreid</th>
+            <th scope="col">genrename</th>
+            <th scope="col">music_id</th>
+            <th scope="col">music_name</th>
+            <th scope="col">music_path</th>
+            <th scope="col">img_path</th>
+            <th scope="col"> </th>
+           
+        </tr>
+    </thead>
+    @{
+        var i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        {
+            i++;
+        }
+        <tbody>
+            <tr>
+                <th scope="row">@i</th>
+                <td>@item.Genreid</td>
+                <td>@item.Genrename</td>
+                <td>@item.MusicId</td>
+                <td>@item.MusicName</td>
+                <td>@item.MusicPath</td>
+                <th>@item.ImgPath</th>
+                <th><a asp-action="Delete" asp-route-music_id="@item.MusicId" class="btn btn-danger" aria-disabled="true">Delete</a></th>
+                @*<th><a asp-action="update" asp-route-music_id="@item.MusicId" class="btn btn-success" aria-disabled="true">Update</a></th>
+*@
+
+
+                @*@if (@item.Email == "admin@gmail.com")
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger" aria-disabled="true">Delete</a></th>
+            }
+            else
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger">Delete</a></th>
+            }*@
+            </tr>
+        </tbody>
+    }
+</table>
+<a style="margin-left:90%" class="btn btn-dark" asp-area="" asp-controller="music" asp-action="addsongs">Add Songs</a>

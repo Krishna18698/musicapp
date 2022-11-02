@@ -1,0 +1,58 @@
+﻿@model musicapp.Models.Genre
+@{
+    ViewData["Title"] = "addGenres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h1 class="top" >ADD GENRE</h1>
+<form method="post">
+
+
+    @* <select asp-for="Genreid" class="form-control" required>
+    <br />
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    </select>
+    <br />
+
+
+    <select asp-for="Genrename" class="form-control" required>
+    <br />
+    <option>western</option>
+    <option>Classical</option>
+    <option>Rock</option>
+    <option>Instrumental</option>
+    <option>Devotional</option>
+    </select><br />*@
+
+
+    
+
+    <input type="text" asp-for="Genrename" class="form-control" placeholder="GenreName" required /><br />
+
+
+
+    @*  <input type="file" asp-for="ImgPath" class="form-control form-control-lg" id="formFileLg" required><br />
+
+    <input type="file" asp-for="MusicPath" class="form-control form-control-lg" id="formFileLg" required><br />
+
+    <br />*@
+
+
+    <input type="submit" value="register" class="btn btn-success" />
+
+
+
+</form>
+
+@Html.ActionLink("View Feedback", "coments", null, new {@class="btn btn-primary"})
+<div @ViewData["msg"]</div>
+
+
+

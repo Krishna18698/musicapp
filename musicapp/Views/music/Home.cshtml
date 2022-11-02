@@ -1,0 +1,72 @@
+﻿
+
+@model IEnumerable< musicapp.Models.Music>
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="home" id="home">
+    <div class="text"> 
+        <h1><span>You Are<br />What You Are <b>LISTENING TO...</b></span></h1>
+        <p>Listen to music that groves your heart</p>
+        <div class="app-stores">
+            <img src="~/image/apple.jpeg"  alt=""/>
+            <img src="~/image/andriod.jpeg" alt=""/>
+        </div>
+
+    </div>
+
+</section>
+
+
+<br />
+<div class="container">
+    <div class="row row-cols-3 row-cols-md-3">
+
+@foreach (var item in Model)
+{
+    <div class="col">
+    <div class="card" style="width: 20rem;"> 
+        
+        <div class="card-body">
+            <h5 class="card-title"> @item.MusicName</h5>
+            <br />
+            <img style="width:250px;height:150px;" src="@item.ImgPath">
+            <br />
+            @item.Genrename
+            <br />
+      
+            
+            <audio controls >
+                <source src="@item.MusicPath" />
+            </audio>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+   
+
+
+    
+        
+       @* <audio controls>
+            <source src="/musicf/hip-hop-rock-beats-118000.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>*@
+   
+  
+
+    
+ 
+
+}
+    </div>
+</div>
+<br />
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2022 - musicapp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>

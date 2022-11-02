@@ -1,0 +1,34 @@
+﻿@model musicapp.Models.Feedback1
+@{
+    ViewData["Title"] = "feedback1";
+}
+
+<h1 class="top" style="color:white">feedback</h1>
+
+<b style="color:white">@ViewData["music_id"]</b>
+<br />
+
+<b style="color:black">
+   Song Name: @ViewData["music_name"]</b><br />
+@*<b style="color:white">
+    Song Name: @ViewData["email"]*@
+</b>
+<br />
+   
+<form method="post">
+    
+  @*  <div class="form-floating mb-3" style="color:white;">
+
+        <input type="text" asp-for="Email" class="form-control" id="floatingInput" placeholder="Enter email" required />
+        <label for=" floatingInput">Email:</label><br />
+    </div>*@
+
+    <div class="form-floating mb-3" style="color:black;">
+
+        <input type="text" asp-for="Feedback" class="form-control" id="floatingInput" placeholder="Enter Feedback" required />
+        <label for=" floatingInput">Feedback:</label><br />
+    </div>
+    
+
+    <input type="submit" vlaue="SUBMIT" class="btn btn-info"/>
+</form>

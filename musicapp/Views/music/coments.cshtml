@@ -1,0 +1,40 @@
+﻿@model IEnumerable< musicapp.Models.Feedback1>
+@{
+    ViewData["Title"] = "coments";
+}
+
+<h1 class="top">comments</h1>
+<table class="table table-borderless table-dark">
+    <thead>
+<tr>
+
+        <th style="color:white">Feedback_id </th>
+        <th style="color:white">Song_name</th>
+        <th style="color:white ">Email </th>
+        <th style="color:white ">Feedback</th>
+
+ </tr>
+    </thead>
+    <tr>
+    
+        @foreach (var item in Model)
+        {
+            <tbody>
+        <tr>
+
+            <td style="color:white">@item.Feedid</td>
+
+            <td style="color:white">@item.Songname</td>
+
+            <td style="color:white">@item.Email</td>
+
+            <td style="color:white">@item.Feedback</td>
+
+
+        </tr>
+        </tbody>
+        }
+               
+ </table>
+
+

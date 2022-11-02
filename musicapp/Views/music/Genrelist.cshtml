@@ -1,0 +1,60 @@
+﻿@model IEnumerable<musicapp.Models.Genre>
+@{
+    ViewData["Title"] = "Genrelist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="top" class="top">Genrelist</h1>
+<table class="table table-borderless table-dark" style="background-color:lightyellow">
+    <thead>
+        <tr>
+            <th scope="col">Row number</th>
+            <th scope="col">genreid</th>
+            <th scope="col">genre Name</th>
+            <th scope="col"> </th>
+            
+        </tr>
+    </thead>
+    @{
+        var i = 0;
+    }
+    @foreach (var item in Model)
+    {
+        {
+            i++;
+        }
+        <tbody>
+            <tr>
+                <th scope="row">@i</th>
+                <td>@item.Genreid</td>
+                <td>@item.Genrename</td>
+              
+                
+                <th><a asp-action="GenreDelete" asp-route-genrename="@item.Genrename" class="btn btn-danger" aria-disabled="true">Delete</a></th>
+               
+
+
+                @*@if (@item.Email == "admin@gmail.com")
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger" aria-disabled="true">Delete</a></th>
+            }
+            else
+            {
+            <th><a asp-action="DleteCustomer" asp-route-email=@item.Email class="btn btn-danger">Delete</a></th>
+            }*@
+            </tr>
+        </tbody>
+    }
+</table>
+
+
+<div>
+    <th><a asp-action="addGenres" asp-controller="music" class="btn btn-dark" aria-disabled="true">Add</a></th>
+</div>
+
+
+
+
+
+
+

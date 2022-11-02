@@ -1,0 +1,77 @@
+﻿@model musicapp.Models.Music
+@{
+    ViewData["Title"] = "addsongs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="top"  style="color:black;font-family:'Times New Roman'">ADD MUSIC</h1>
+<form method="post" enctype="multipart/form-data">
+
+    <label>Genre ID</label>
+    <select asp-for="Genreid" class="form-control" required>
+        <br />
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>9</option>
+    </select>
+    <br />
+
+    <label>Genre Name</label>
+    <select asp-for="Genrename" class="form-control" required>
+        <br />
+        <option>western</option>
+        <option>Classical</option>
+        <option>Rock</option>
+        <option>Instrumental</option>
+        <option>Devotional</option>
+        <option>Edm</option>
+    </select><br />
+
+    <label>Music ID</label>
+    <input type="number" asp-for="MusicId" class="form-control" placeholder="MusicID" required /><br />
+    <label>MusicName</label>
+    <input type="text" asp-for="MusicName" class="form-control" placeholder="Musicname" required /><br />
+
+
+
+   <div class="form-group">
+ 
+       <label asp-for="imgpath" class="control-label"></label>
+       <div class="custom-file">
+            <input asp-for="imgpath" class="custom-file-input" id="customFile" >
+           <label class="custom-file-label" for="customFile"></label>
+
+       </div>
+
+   
+       <span asp-validation-for="imgpath" class="text-black"></span>
+   </div>
+    <div class="form-group">
+
+        <label asp-for="musicpath" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="musicpath" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile"></label>
+
+        </div>
+
+        <span asp-validation-for="musicpath" class="text-black"></span>
+
+    </div>
+
+    <br />
+
+
+    <input type="submit" value="Add" class="btn btn-dark" />
+
+    
+
+</form>
+
+
+<div @ViewData["msg"]</div>
+

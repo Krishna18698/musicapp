@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - musicapp </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/musicapp.styles.css" asp-append-version="true" />
+    <title>Wipfli music</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <div>
+            <a asp-action="Home" class="logo" align="center"><img src="~/image/logo2.png" style="" /> <marquee><b style="color:black">Wipfli Music</b></marquee></a>
+
+        </div>
+        
+                        <div class="bx bx-menu" id="menu-icon"></div>
+                        <ul class="navbar">
+                            <li><a asp-action="Home">Home</a></li>
+                            <li><a asp-action="dashboard" >dashboard</a></li>
+                            <li><a asp-action="About">About Us</a></li>
+
+                          
+                            <li><a asp-action="contactus">Contact Us</a></li>
+                         @if (Context.User.IsInRole("Admin"))
+                            {
+                          <li>
+                                 <a asp-controller="music" asp-action="AdminControls">AdminControls</a>
+                          </li>
+
+                              }
+
+                    <div class="ser" style="margin-left:50px;">
+                <form method="post" action="/music/Search">
+                <div class="input-box">
+                
+                        <input type="text" name="ser" /> <input type="submit" value="Search" class="btn btn-dark" placeholder="enter songname" />
+                    </div>
+                   
+                </form>
+                </div>
+
+
+          
+                        </ul>
+                        @if (Context.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Music" asp-action="Logout" style="margin-left:90%">Logout</a>
+
+
+
+
+                                <p style="color:black;"> Welcome @Context.User.Identity.Name</p>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="music" asp-action="Login">Login</a>
+                            </li>
+                        }
+
+
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+
+</html>

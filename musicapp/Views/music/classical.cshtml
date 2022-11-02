@@ -1,0 +1,37 @@
+﻿@model IEnumerable< musicapp.Models.Music>
+@{
+    ViewData["Title"] = "classical";
+}
+
+
+<h1 class="top" style="color:black;font-family:'Times New Roman'">CLASSICAL</h1>
+<div class="container">
+    <div class="row row-cols-3 row-cols-md-3">
+@foreach (var item in Model)
+{
+    <div class="col">
+    <div class="card" style="width: 20rem;"> 
+        
+        <div class="card-body">
+            <input type="hidden" value=0  >
+            <h5 class="card-title"> @item.MusicName</h5>
+            <br />
+            <img style="width:250px;height:150px;" src="@item.ImgPath">
+            <br />
+            @item.Genrename
+            <br />
+      
+            
+            <audio controls >
+                <source src="@item.MusicPath" />
+            </audio>
+
+                        <a asp-action="feedback" asp-route-music_id=@item.MusicId asp-route-music_name=@item.MusicName asp-route-genrename=@item.Genrename class="btn btn-dark">feedback</a>
+
+                    </div>
+                </div>
+            </div>
+   
+}
+    </div>
+</div>

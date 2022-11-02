@@ -1,0 +1,56 @@
+﻿@model IEnumerable<musicapp.Models.Music>
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="top"></h1>
+
+
+
+
+
+
+
+<div class="row">
+    @foreach (var i in Model)
+    {
+        <div class="col-md-4">
+
+            <div class="col">
+                <div class="card" style="width: 20rem;">
+
+                    <div class="card-body">
+
+
+                        <div><b>@i.MusicName</b></div>
+            <div>
+                            <br />
+                            <img style="width:250px;height:150px;" src="@i.ImgPath">
+                            <br />
+            </div>
+                        <div>@i.Genrename</div>
+            
+         
+                        <div>
+                            <audio controls>
+                                <source src="@i.MusicPath" />
+                            </audio>
+                        </div>
+                       
+           
+            </div>
+                </div>
+            </div>
+
+
+
+          @*  <a asp-action="" asp-route-room_id=@i.Genreid asp-route-room_price=@i.Genrename asp-route-room_type=@i.MusicId asp-route-room_capacity=@i.MusicName asp-route-room_image=@i.MusicPath class="btn btn-primary">Book  Now</a>*@
+            <br />
+
+
+
+
+        </div>
+    }
+</div>
